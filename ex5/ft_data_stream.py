@@ -15,20 +15,25 @@ def consume_event(event_list):
         event = event_list.pop(index)
         yield event
 
-event_generator = gen_event()
-print("=== Game Data Stream Processor ===")
-for i in range(1000):
-    event = next(event_generator)
-    player, action = event
-    print(f"Event {i}: Player {player} did action {action}")
+def main() -> None:
+    event_generator = gen_event()
+    print("=== Game Data Stream Processor ===")
+    for i in range(1000):
+        event = next(event_generator)
+        player, action = event
+        print(f"Event {i}: Player {player} did action {action}")
 
-event_generator = gen_event()
-event_list = []
-for i in range(10):
-    event = next(event_generator)
-    event_list.append(event)
-print(f"Built list of 10 events: {event_list}")
+    event_generator = gen_event()
+    event_list = []
+    for i in range(10):
+        event = next(event_generator)
+        event_list.append(event)
+    print(f"Built list of 10 events: {event_list}")
 
-for event in consume_event(event_list):
-    print(f"Got event from list: {event}")
-    print(f"Remains in list: {event_list}")
+    for event in consume_event(event_list):
+        print(f"Got event from list: {event}")
+        print(f"Remains in list: {event_list}")
+
+
+if __name__ == "__main__":
+    main()
