@@ -1,4 +1,5 @@
-import sys 
+import sys
+
 
 def main() -> None:
     print("=== Inventory System Analysis ===")
@@ -46,16 +47,18 @@ def main() -> None:
             if qty > most_quantity:
                 most_abundant = item
                 most_quantity = qty
-        print(f"Item most abundant: {most_abundant} with quantity {most_quantity}")
+        print(f"Item most abundant: {most_abundant}"
+              f"with quantity {most_quantity}")
 
         least_abundant: str = item_list[0]
         least_quantity: int = inventory[item_list[0]]
-        for item in item_list:  
+        for item in item_list:
             qty = inventory[item]
             if qty < least_quantity:
                 least_abundant = item
                 least_quantity = qty
-        print(f"Item least abundant: {least_abundant} with quantity {least_quantity}")
+        print(f"Item least abundant: {least_abundant}"
+              f"with quantity {least_quantity}")
 
     inventory.update({"magic_item": 1})
     print(f"Updated inventory: {inventory}")

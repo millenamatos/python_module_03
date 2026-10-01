@@ -1,20 +1,21 @@
 import random
 
+
 def gen_player_achievements() -> set[str]:
     achievements: list[str] = [
-    "First Steps",
-    "Boss Slayer",
-    "Master Explorer",
-    "World Savior",
-    "Strategist",
-    "Speed Runner",
-    "Survivor",
-    "Treasure Hunter",
-    "Untouchable",
-    "Collector Supreme",
-    "Unstoppable",
-    "Hidden Path Finder",
-    "Sharp Mind"
+        "First Steps",
+        "Boss Slayer",
+        "Master Explorer",
+        "World Savior",
+        "Strategist",
+        "Speed Runner",
+        "Survivor",
+        "Treasure Hunter",
+        "Untouchable",
+        "Collector Supreme",
+        "Unstoppable",
+        "Hidden Path Finder",
+        "Sharp Mind"
     ]
     quantity: int = random.randint(5, 8)
     selected: list[str] = random.sample(achievements, quantity)
@@ -36,7 +37,9 @@ def main() -> None:
     all_achievements: set[str] = set.union(alice, bob, charlie, dylan)
     print(f"\nAll distinct achievements: {all_achievements}")
 
-    common_achievements: set[str] = set.intersection(alice, bob, charlie, dylan)
+    common_achievements: set[str] = set.intersection(
+        alice, bob, charlie, dylan
+        )
     print(f"\nCommon achievements: {common_achievements}")
 
     only_alice: set[str] = alice - set.union(bob, charlie, dylan)
@@ -62,6 +65,7 @@ def main() -> None:
 
     missing_dylan: set[str] = all_achievements - dylan
     print(f"Dylan is missing: {missing_dylan}")
+
 
 if __name__ == "__main__":
     main()

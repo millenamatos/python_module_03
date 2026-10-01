@@ -1,5 +1,6 @@
 import sys
 
+
 def main() -> None:
     print("=== Player Score Analytics ===")
     scores: list[int] = []
@@ -10,7 +11,10 @@ def main() -> None:
         except ValueError:
             print(f"Invalid parameter: '{arg}'")
     if not scores:
-        print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+        print(
+            "No scores provided."
+            "Usage: python3 ft_score_analytics.py <score1> <score2> ..."
+            )
     else:
         print(f"Scores processed: {(scores)}")
         print(f"Total players: {len(scores)}")
@@ -19,6 +23,7 @@ def main() -> None:
         print(f"High score: {max(scores)}")
         print(f"Low score: {min(scores)}")
         print(f"Score range: {max(scores) - min(scores)}")
+
 
 if __name__ == "__main__":
     main()
