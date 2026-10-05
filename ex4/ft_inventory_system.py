@@ -7,11 +7,11 @@ def main() -> None:
     inventory: dict[str, int] = {}
 
     for arg in sys.argv[1:]:
-        original: str = arg
+        original_arg: str = arg
         parts: list[str] = arg.split(":")
 
         if len(parts) != 2:
-            print(f"Error - invalid parameter '{original}'")
+            print(f"Error - invalid parameter '{original_arg}'")
             continue
 
         item: str = parts[0]
