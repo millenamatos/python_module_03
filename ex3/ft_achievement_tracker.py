@@ -42,16 +42,16 @@ def main() -> None:
         )
     print(f"\nCommon achievements: {common_achievements}")
 
-    only_alice: set[str] = alice - set.union(bob, charlie, dylan)
+    only_alice: set[str] = alice - bob.union(charlie, dylan)
     print(f"\nOnly Alice has: {only_alice}")
 
-    only_bob: set[str] = bob - set.union(alice, charlie, dylan)
+    only_bob: set[str] = bob - alice.union(charlie, dylan)
     print(f"Only Bob has: {only_bob}")
 
-    only_charlie: set[str] = charlie - set.union(alice, bob, dylan)
+    only_charlie: set[str] = charlie - dylan.union(alice, bob)
     print(f"Only Charlie has: {only_charlie}")
 
-    only_dylan: set[str] = dylan - set.union(alice, charlie, bob)
+    only_dylan: set[str] = dylan - charlie.union(alice, bob)
     print(f"Only Dylan has: {only_dylan}")
 
     missing_alice: set[str] = all_achievements - alice
