@@ -48,7 +48,7 @@ def main() -> None:
                 most_abundant = item
                 most_quantity = qty
         print(f"Item most abundant: {most_abundant}"
-              f"with quantity {most_quantity}")
+              f" with quantity {most_quantity}")
 
         least_abundant: str = item_list[0]
         least_quantity: int = inventory[item_list[0]]
@@ -58,7 +58,7 @@ def main() -> None:
                 least_abundant = item
                 least_quantity = qty
         print(f"Item least abundant: {least_abundant}"
-              f"with quantity {least_quantity}")
+              f" with quantity {least_quantity}")
 
     inventory.update({"magic_item": 1})
     print(f"Updated inventory: {inventory}")
